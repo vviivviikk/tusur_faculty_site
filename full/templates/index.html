@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ТУСУР - Подбор факультета</title>
+  <link rel="stylesheet" href="{{url_for('static',filename= 'css/styles.css')}}">
+  </head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+         <a href="index.html" class="logo">
+          <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="ТУСУР" class="logo__img">
+        </a>
+        <nav class="nav">
+          <a href="{{url_for('index')}}" class="nav__link">Главная</a>
+          <a href="{{url_for('faculty')}}" class="nav__link">Подбор факультета</a>
+          <a href="{{url_for('profile')}}" class="nav__link">Профиль</a>
+          <div class="auth-buttons">
+            <a href="{{url_for('auth')}}" class="btn btn-outline">Войти</a>
+            <a href="{{url_for('register')}}" class="btn btn-primary">Регистрация</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+      <main class="main">
+       <section class="hero">
+        <div class="container">
+          <h1 class="hero__title">Томский государственный университет систем управления и радиоэлектроники</h1>
+           <p class="hero__subtitle">Наш сервис анализирует ваши интересы и школьные предметы, чтобы предложить оптимальный вариант</p>
+            <a href="{{url_for('faculty')}}" class="btn btn-primary btn-lg">Подобрать факультет</a>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="features__grid">
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <img src="{{ url_for('static', filename='images/icon-faculty.svg') }}" alt="Факультеты">
+            </div>
+            <h3 class="feature-card__title">4 факультета</h3>
+            <p class="feature-card__text">Широкий выбор направлений подготовки</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <img src="{{ url_for('static', filename='images/icon-students.svg') }}" alt="Студенты">
+            </div>
+            <h3 class="feature-card__title">15000+ студентов</h3>
+            <p class="feature-card__text">Присоединяйтесь к большому сообществу</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <img src="{{ url_for('static', filename='images/icon-experience.svg') }}" alt="Опыт">
+            </div>
+            <h3 class="feature-card__title">50+ лет</h3>
+            <p class="feature-card__text">Опыта в качественном образовании</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <footer class="footer">
+    <div class="container">
+      <p>© 2025 Томский государственный университет систем управления и радиоэлектроники</p>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth-check.js"></script>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,564 @@
+:root {
+  --primary-color: #320ae6;
+  --secondary-color: #3498db;
+  --text-color: #646464;
+  --light-gray: #e2f4fcec;
+  --white: #fff;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 10px rgba(104, 205, 245, 0.897);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: var(--light-gray);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Кнопки */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #4f565e;
+  border-color: #1a252f;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-lg {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+}
+
+/* Шапка */
+.header {
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(212, 15, 15, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo__img {
+  height: 50px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav__link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+  color: var(--secondary-color);
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+/* Герой секция */
+.hero {
+  background: linear-gradient(rgba(44, 101, 255, 0.993), rgb(156, 225, 247)), url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero__title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero__subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Карточки особенностей */
+.features {
+  padding: 80px 0;
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-card__icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+}
+
+.feature-card__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.feature-card__title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+/* Подвал */
+.footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Основные стили для страницы подбора факультета */
+.faculty-page {
+  padding: 40px 0 60px;
+}
+
+.faculty-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faculty-form-container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form-section {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.form-section__title {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: #3498db;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-right: 12px;
+}
+
+.form-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #34495e;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.checkbox-card {
+  display: block;
+  cursor: pointer;
+}
+
+.checkbox-card input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-content {
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 15px;
+  transition: all 0.2s ease;
+  height: 100%;
+}
+
+.checkbox-card input:checked ~ .checkbox-content {
+  border-color: #3498db;
+  background-color: #f8fafc;
+}
+
+.checkbox-card:hover .checkbox-content {
+  border-color: #bdc3c7;
+}
+
+.checkbox-icon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.checkbox-text {
+  font-size: 0.95rem;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 100px;
+  transition: border-color 0.2s ease;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.textarea-hint {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  margin-top: 5px;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn-icon {
+  margin-right: 8px;
+}
+
+/* Стили для результатов */
+.results-container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  max-width: 900px;
+  margin: 40px auto 0;
+}
+
+.results-title {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.results-subtitle {
+  color: #7f8c8d;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.faculty-results {
+  display: grid;
+  gap: 20px;
+}
+
+.faculty-card {
+  border: 2px solid #ecf0f1;
+  border-radius: 10px;
+  padding: 25px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faculty-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faculty-card__title {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.faculty-card__description {
+  color: #7f8c8d;
+  margin-bottom: 15px;
+}
+
+.faculty-card__match {
+  margin-bottom: 15px;
+}
+
+.match-bar {
+  height: 8px;
+  background-color: #3498db;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.faculty-card__subjects h4 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #34495e;
+}
+
+.faculty-card__subjects ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.faculty-card__subjects li {
+  background-color: #f8f9fa;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.faculty-card__actions {
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .faculty-form-container,
+  .results-container {
+    padding: 25px;
+  }
+  
+  .checkbox-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-section__title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Анимация загрузки */
+.btn-loader {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Сообщения об ошибках */
+.error-message {
+  background-color: #fff6f6;
+  border: 1px solid #ffdfdf;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  color: #e74c3c;
+}
+
+.error-icon {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.error-text {
+  font-size: 0.95rem;
+}
+
+/* Дополнительные стили для карточек */
+.faculty-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.faculty-card__match-value {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.faculty-card__details {
+  display: flex;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.faculty-card__info {
+  min-width: 200px;
+}
+
+.info-item {
+  margin-bottom: 10px;
+}
+
+.info-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+.info-value {
+  font-weight: 500;
+}
+
+.faculty-card__more {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ecf0f1;
+}
+
+.faculty-card__more h4 {
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+.professions-list {
+  columns: 2;
+  column-gap: 20px;
+}
+
+.professions-list li {
+  margin-bottom: 5px;
+  break-inside: avoid;
+}
+
+.no-results {
+  text-align: center;
+  padding: 30px;
+  color: #7f8c8d;
+}
+
+.no-results p {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+  .faculty-card__details {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .professions-list {
+    columns: 1;
+  }
+}

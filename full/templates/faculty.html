@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ТУСУР - Подбор факультета</title>
+  <link rel="stylesheet" href="{{url_for('static',filename= 'css/faculty.css')}}">
+  </head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+         <a href="index.html" class="logo">
+          <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="ТУСУР" class="logo__img">
+        </a>
+        <nav class="nav">
+          <a href="{{url_for('index')}}" class="nav__link">Главная</a>
+          <a href="{{url_for('faculty')}}" class="nav__link">Подбор факультета</a>
+          <a href="{{url_for('profile')}}" class="nav__link">Профиль</a>
+          <div class="auth-buttons">
+            <a href="{{url_for('auth')}}" class="btn btn-outline">Войти</a>
+            <a href="{{url_for('register')}}" class="btn btn-primary">Регистрация</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+       <main class="main faculty-page">
+    <div class="container">
+      <div class="faculty-header">
+        <h1 class="page-title">Подбор факультета</h1>
+        <p class="page-subtitle">Ответьте на вопросы, и наша система подберет для вас наиболее подходящие факультеты</p>
+      </div>
+      
+      <div class="faculty-form-container">
+        <form id="facultyForm" class="faculty-form">
+          <div class="form-section">
+            <h2 class="form-section__title">
+              <span class="step-number">1</span>
+              Ваши школьные предметы
+            </h2>
+            
+            <div class="form-group">
+              <label class="form-label">Любимые предметы</label>
+              <div class="checkbox-grid">
+                <label class="checkbox-card">
+                  <input type="checkbox" name="liked_subjects" value="math">
+                  <div class="checkbox-content">
+                    <span class="checkbox-icon">📐</span>
+                    <span class="checkbox-text">Математика</span>
+                  </div>
+                </label>
+                
+                <label class="checkbox-card">
+                  <input type="checkbox" name="liked_subjects" value="physics">
+                  <div class="checkbox-content">
+                    <span class="checkbox-icon">⚛️</span>
+                    <span class="checkbox-text">Физика</span>
+                  </div>
+                </label>
+                
+                <!-- Другие предметы -->
+                <label class="checkbox-card">
+                  <input type="checkbox" name="liked_subjects" value="informatics">
+                  <div class="checkbox-content">
+                    <span class="checkbox-icon">💻</span>
+                    <span class="checkbox-text">Информатика</span>
+                  </div>
+                </label>
+                
+                <label class="checkbox-card">
+                  <input type="checkbox" name="liked_subjects" value="chemistry">
+                  <div class="checkbox-content">
+                    <span class="checkbox-icon">🧪</span>
+                    <span class="checkbox-text">Химия</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Нелюбимые предметы</label>
+              <div class="checkbox-grid">
+                <label class="checkbox-card">
+                  <input type="checkbox" name="disliked_subjects" value="literature">
+                  <div class="checkbox-content">
+                    <span class="checkbox-icon">📚</span>
+                    <span class="checkbox-text">Литература</span>
+                  </div>
+                </label>
+                
+                <label class="checkbox-card">
+                  <input type="checkbox" name="disliked_subjects" value="history">
+                  <div class="checkbox-content">
+                    <span class="checkbox-icon">🏛️</span>
+                    <span class="checkbox-text">История</span>
+                  </div>
+                </label>
+                
+                <!-- Другие предметы -->
+                <label class="checkbox-card">
+                  <input type="checkbox" name="disliked_subjects" value="biology">
+                  <div class="checkbox-content">
+                    <span class="checkbox-icon">🧬</span>
+                    <span class="checkbox-text">Биология</span>
+                  </div>
+                </label>
+                
+                <label class="checkbox-card">
+                  <input type="checkbox" name="disliked_subjects" value="foreign_lang">
+                  <div class="checkbox-content">
+                    <span class="checkbox-icon">🗣️</span>
+                    <span class="checkbox-text">Иностранный язык</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section__title">
+              <span class="step-number">2</span>
+              Планируемые экзамены ЕГЭ
+            </h2>
+            <div class="checkbox-grid">
+              <label class="checkbox-card">
+                <input type="checkbox" name="exams" value="math">
+                <div class="checkbox-content">
+                  <span class="checkbox-text">Математика (профиль)</span>
+                </div>
+              </label>
+              
+              <label class="checkbox-card">
+                <input type="checkbox" name="exams" value="russian">
+                <div class="checkbox-content">
+                  <span class="checkbox-text">Русский язык</span>
+                </div>
+              </label>
+              
+              <label class="checkbox-card">
+                <input type="checkbox" name="exams" value="physics">
+                <div class="checkbox-content">
+                  <span class="checkbox-text">Физика</span>
+                </div>
+              </label>
+              
+              <label class="checkbox-card">
+                <input type="checkbox" name="exams" value="informatics">
+                <div class="checkbox-content">
+                  <span class="checkbox-text">Информатика</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section__title">
+              <span class="step-number">3</span>
+              Ваши интересы
+            </h2>
+            
+            <div class="form-group">
+              <label for="interests" class="form-label">Мне интересно</label>
+              <textarea id="interests" name="interests" rows="4" class="form-textarea" 
+                placeholder="Опишите, что вам нравится, какие области знаний вас привлекают"></textarea>
+              <div class="textarea-hint">Например: программирование, робототехника, искусственный интеллект</div>
+            </div>
+            
+            <div class="form-group">
+              <label for="not_interests" class="form-label">Мне неинтересно</label>
+              <textarea id="not_interests" name="not_interests" rows="4" class="form-textarea" 
+                placeholder="Опишите, что вам не нравится, какие области знаний вас не привлекают"></textarea>
+              <div class="textarea-hint">Например: гуманитарные науки, экономика</div>
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-lg">
+              <span class="btn-icon">🔍</span>
+              Подобрать факультет
+            </button>
+          </div>
+        </form>
+      </div>
+      
+      <div id="results" class="results-container hidden">
+        <h2 class="results-title">Рекомендованные факультеты</h2>
+        <p class="results-subtitle">На основе ваших ответов мы подобрали следующие варианты:</p>
+        
+        <div id="facultyResults" class="faculty-results">
+          <!-- Результаты будут здесь -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+    <footer class="footer">
+    <div class="container">
+      <p>© 2023 Томский государственный университет систем управления и радиоэлектроники</p>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth-check.js"></script>
+  </div>
+  <script src="{{ url_for('static', filename='js/faculty.js') }}"></script>
+</body>
+</html>

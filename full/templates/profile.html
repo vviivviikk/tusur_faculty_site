@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Профиль - ТУСУР</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <a href="{{ url_for('index') }}" class="logo">
+            <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="ТУСУР" class="logo__img">
+          </a>
+          <nav class="nav">
+            <a href="{{ url_for('index') }}" class="nav__link">Главная</a>
+            <a href="{{ url_for('faculty') }}" class="nav__link">Подбор факультета</a>
+            <a href="{{ url_for('profile') }}" class="nav__link">Профиль</a>
+            <div class="auth-buttons">
+              <a href="{{ url_for('auth') }}" class="btn btn-outline">Войти</a>
+              <a href="{{ url_for('register') }}" class="btn btn-primary">Регистрация</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="main profile-page">
+      <div class="container">
+        <div class="profile-header">
+          <h1 class="page-title">Мой профиль</h1>
+          <button id="editProfileBtn" class="btn btn-outline">Редактировать</button>
+        </div>
+        <div class="profile-card">
+          <div class="profile-avatar">
+            <img src="{{ url_for('static', filename='images/avatar.svg') }}" alt="Аватар" id="profileAvatar">
+            <input type="file" id="avatarUpload" accept="image/*" class="hidden">
+            <button id="changeAvatarBtn" class="btn btn-sm btn-outline hidden">Изменить</button>
+          </div>
+          <form id="profileForm" class="profile-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Фамилия</label>
+                <input type="text" name="last_name" id="profileLastName" readonly class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Имя</label>
+                <input type="text" name="first_name" id="profileFirstName" readonly class="form-input">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Отчество</label>
+              <input type="text" name="middle_name" id="profileMiddleName" readonly class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" name="email" id="profileEmail" readonly class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Дата рождения</label>
+              <input type="date" name="birth_date" id="profileBirthDate" readonly class="form-input">
+            </div>
+            <div id="passwordFields" class="hidden">
+              <div class="form-group">
+                <label class="form-label">Новый пароль</label>
+                <input type="password" name="new_password" id="newPassword" class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Подтверждение пароля</label>
+                <input type="password" name="confirm_password" id="confirmPassword" class="form-input">
+              </div>
+            </div>
+            <div class="form-actions hidden" id="formActions">
+              <button type="button" id="cancelEditBtn" class="btn btn-outline">Отмена</button>
+              <button type="submit" class="btn btn-primary">Сохранить</button>
+            </div>
+          </form>
+        </div>
+        <div class="profile-application">
+          <h2 class="section-title">Моя заявка</h2>
+          <div id="applicationInfo">
+            <p class="no-application">Вы ещё не подавали заявку</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2025 Томский государственный университет систем управления и радиоэлектроники</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

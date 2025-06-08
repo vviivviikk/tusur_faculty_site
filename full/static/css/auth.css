@@ -1,0 +1,104 @@
+/* Основные параметры страницы */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Контейнер формы */
+.container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    width: 400px;
+}
+
+/* Заголовок */
+h1 {
+    font-size: 24px;
+    color: #2088e9;
+    text-align: center;
+}
+
+/* Поля ввода */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #bdbdbd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Кнопка */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2088e9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2088e9;
+}
+
+/* Ссылки */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #00796b;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+  /* Общие стили для всех полей ввода */
+        input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #bdbdbd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        /* Кнопка */
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #2088e9;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2088e9;
+        }
+
+        /* Ссылки */
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #2088e9;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
