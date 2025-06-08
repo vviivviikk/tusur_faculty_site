@@ -64,12 +64,15 @@
 cd полный/путь/до/full/frontend
 
 **2. Установка зависимостей**
+   
     Создание виртуального окружения
     python -m venv venv
     venv\Scripts\activate  # Windows
 
 **3. Установка Flask**
+   
     pip install flask flask_sqlalchemy python-dotenv
 
 **4. Запуск приложения**
+    
     python app.py
